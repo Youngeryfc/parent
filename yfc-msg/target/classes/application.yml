@@ -1,0 +1,31 @@
+server:
+  port: 8763
+  context-path: /message
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: message
+  activemq:
+    broker-url: tcp://localhost:61616
+    in-memory: true
+    pool:
+      enabled: false
+  ########163邮件发送的登陆账号、登陆账号必须和发送账号是同一个账号#########
+  mail:
+    host: smtp.163.com
+    username: 17321327838@163.com
+    password: yfc123456
+    enable:  true
+    smtp:
+      auth: true
+    starttls:
+      enable: true
+      required: true
+########################################
+
+msg:
+  subject: hello
+  text:  welcome to my demo

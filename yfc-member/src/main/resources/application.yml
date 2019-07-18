@@ -1,0 +1,63 @@
+server:
+  port: 8762
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: member
+  redis:
+    database: 0
+    host: 47.98.192.193
+    #password: 123456
+    port: 6379
+    timeout: 3000
+    pool:
+      max-idle: 8       # 连接池中的最大空闲连接，默认值也是8
+      min-idle: 0       # 连接池中的最小空闲连接，默认值也是0
+      max-active: 8     # 如果赋值为-1，则表示不限制；如果pool已经分配了maxActive个jedis实例，则此时pool的状态为exhausted(耗尽)。
+      max-wait: -1      # 等待可用连接的最大时间，单位毫秒，默认值为-1，表示
+  datasource:
+    #url: jdbc:mysql://localhost:3306/yfc?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    #driver-class-name: com.mysql.cj.jdbc.Driver
+    #username: root
+    #password: root
+    url: jdbc:mysql://papt.mychong.top:3306/yfc?useSSL=false&serverTimezone = UTC&
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #定义初始连接数
+    initialSize: 5
+    #定义最大连接数
+    maxActive: 50
+    #定义最小空闲
+    minIdle: 3
+    #最大连接等待
+    maxWait: 60000
+    #是否自我中断
+    removeAbandoned: true
+    #几秒后数据连接会自动断开（removeAbandoned: true）
+    removeAbandonedTimeout: 1800
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    #用于验证是否成功的查询sql语句sql语句必须至少要返回一行数据
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 50
+    filters: stat
+
+
+
+  ##activemq连接信息
+  activemq:
+    broker-url: tcp://localhost:61616
+    in-memory: true
+    pool:
+      enabled: false
+##队列
+messages:
+  queue: messages_queue
