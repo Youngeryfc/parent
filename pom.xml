@@ -22,6 +22,7 @@
         <module>yfc-msg</module>
         <module>yfc-pc-web</module>
         <module>yfc-weixin</module>
+        <module>yfc-pay</module>
     </modules>
 
     <properties>
