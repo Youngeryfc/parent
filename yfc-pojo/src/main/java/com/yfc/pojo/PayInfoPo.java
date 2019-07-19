@@ -1,5 +1,8 @@
 package com.yfc.pojo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
 /**
@@ -8,6 +11,8 @@ import java.util.Date;
  * @description
  * @parmas
  */
+@Setter
+@Getter
 public class PayInfoPo {
     private Integer id;
     /**

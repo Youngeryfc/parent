@@ -1,5 +1,7 @@
 .class
+.git-credentials
 .idea
 .log
 bin/
 classpath/
+target/
